@@ -1,4 +1,8 @@
 <?php
+    /**
+     * Provides the definition of the ServiceUserManager interface.
+     */
+    
     namespace Spiel;
     
     /**
@@ -8,6 +12,7 @@
     interface ServiceUserManager
     {
         /**
+         * Provides a ServiceUser object given a username.
          * @param string $username The username of the user.
          * @return \Spiel\ServiceUser A ServiceUser object providing information
          * on the specified user. If the specified user is not defined, NULL

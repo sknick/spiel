@@ -1,4 +1,8 @@
 <?php
+    /**
+     * Provides the definition of the PHPSession class.
+     */
+     
     namespace Spiel;
     
     /**
@@ -24,7 +28,7 @@
         }
         
         /**
-         * @see Session#getCurrentLogin
+         * @see \Spiel\Session::getCurrentLogin()
          */
         public function getCurrentLogin()
         {

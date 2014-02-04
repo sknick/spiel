@@ -56,7 +56,6 @@
      * 
      * <?php
      *     require_once("spiel.php");
-     *     require_once("Permissions.php");
      *     require_once("ServiceUserManagerImpl.php");
      *     
      *     class Base implements \Spiel\JSONEncodable
@@ -102,12 +101,7 @@
      *         {
      *             parent::__construct(new ServiceUserManagerImpl(),
      *                                 __FILE__,
-     *                                 "Example service which shows the use of a \"slicing copy\" to enforce the data that is returned.",
-     *                                 new Permissions(),
-     *                                 NULL,
-     *                                 NULL,
-     *                                 NULL,
-     *                                 "Base");
+     *                                 "Example service which shows the use of a \"slicing copy\" to enforce the data that is returned.");
      *         }
      *         
      *         public function execute(\Spiel\ServiceUser $currentUser, $params)
@@ -116,6 +110,11 @@
      *             $dataReturned = Base::slicingCopy($dataReturned);
      *             
      *             return new \Spiel\SuccessServiceResponse($dataReturned);
+     *         }
+     *         
+     *         protected function getDataReturned()
+     *         {
+     *             return "Base";
      *         }
      *         
      *         private function getBaseInstance()
