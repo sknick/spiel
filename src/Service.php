@@ -567,14 +567,14 @@ The response from using this web service is a JSON-encoded object that has the f
             if (!is_array($value))
             {
                 // So set up our class to inspect the object
-                $class = new ReflectionClass($value);
+                $class = new \ReflectionClass($value);
             }
             // Else the specified value is an array
             else if (count($value) > 0)
             {
                 // So pull the object name from the first value of the array and
                 // set up our reflection class
-                $class = new ReflectionClass($value[0]);
+                $class = new \ReflectionClass($value[0]);
             }
             
             // If a property name is set
@@ -703,7 +703,7 @@ The response from using this web service is a JSON-encoded object that has the f
                                     $enumPropertyClassName = $enumPropertyType[0];
                                 }
                                 
-                                $enumClass = new ReflectionClass($enumPropertyClassName);
+                                $enumClass = new \ReflectionClass($enumPropertyClassName);
                                 $enumeration = $enumClass->newInstance();
                                 
                                 if (count($enumeration) > 0)

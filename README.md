@@ -13,7 +13,7 @@ the src directory somewhere in your PHP include path and then put the
 sayHello.php file into your web server's publishing path. When you request the
 sayHello.php file, you will be provided with documentation on its interface. By
 requesting the file again but appending an "x" request parameter (e.g.,
-"http://your.server/sayHello.php?x"), the web service will be invoked and you
+`http://your.server/sayHello.php?x`), the web service will be invoked and you
 will be returned a JSON-encoded object indicating the service response.
 
 Spiel requires PHP 5.3 or higher and has been tested in an Apache 2 / PHP
