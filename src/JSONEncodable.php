@@ -3,26 +3,30 @@
     
     /**
      * This is a tagging interface which identifies classes whose instances can
-     * be encoded using the json_encode() function of PHP. Implementing classes
-     * must declare the attributes to be included in the encoded value as
-     * public. In addition, you can define two public static properties of the
-     * implementing class which provide additional metadata to Spiel when
-     * interface documentation is produced for a service returning an instance
-     * of the class:
+     * be encoded using the json_encode() function of PHP.
      * 
-     *     public static $objectProperties      = array();
-     *     public static $enumProperties        = array();
+     * Implementing classes must declare the attributes to be included in the
+     * encoded value as public. In addition, you can define two public static
+     * properties of the implementing class which provide additional metadata to
+     * Spiel when interface documentation is produced for a service returning an
+     * instance of the class:
      * 
-     * The $objectProperties array provides information on any public attributes
-     * of the class which are themselves composed of JSONEncodable objects. The
-     * $enumProperties array provides information on any public attributes which
-     * are actually instances of an Enum object. In both cases, the array
-     * element is a key/value pair with the name of the attribute as the key and
-     * the name of its type as its value. If the described attribute actually
-     * provides an array, then the value of the key/value pair would be an array
-     * containing a string identifying the name of each element's type. Consider
-     * the following example:
+     * ```php
+     *     public static $objectProperties = array();
+     *     public static $enumProperties = array();
+     * ```
      * 
+     * The *$objectProperties* array provides information on any public
+     * attributes of the class which are themselves composed of *JSONEncodable*
+     * objects. The *$enumProperties* array provides information on any public
+     * attributes which are actually instances of an *Enum* object. In both
+     * cases, the array element is a key/value pair with the name of the
+     * attribute as the key and the name of its type as its value. If the
+     * described attribute actually provides an array, then the value of the
+     * key/value pair would be an array containing a string identifying the name
+     * of each element's type. Consider the following example:
+     * 
+     * ```php
      * class Employee implements \Spiel\JSONEncodable
      * {
      *     public static $objectProperties =    array("education"    => "EducationInfo",
@@ -41,19 +45,21 @@
      *     
      *     ...
      * }
+     * ```
      * 
-     * Note that one thing to keep in mind is that the actual JSONEncodable
+     * Note that one thing to keep in mind is that the actual *JSONEncodable*
      * object returned in a particular service invocation may be an instance of
-     * a derived class of that identified in the $objectProperties attribute. In
-     * such a case, more data than is indicated by the class identified can be
-     * returned if the object's derived class has more public attributes which
-     * can be encoded. This will not necessarily cause an issue but it can
+     * a derived class of that identified in the *$objectProperties* attribute.
+     * In such a case, more data than is indicated by the class identified can
+     * be returned if the object's derived class has more public attributes
+     * which can be encoded. This will not necessarily cause an issue but it can
      * result in more data than you expected being returned for certain
      * invocations of the service in question. One possible approach to dealing
      * with this is to implement a "slicing copy" method in the base class which
      * returns a copy of the object but as a new instance of the base class. The
      * following service example illustrates this approach.
      * 
+     * ```php
      * <?php
      *     require_once("spiel.php");
      *     require_once("ServiceUserManagerImpl.php");
@@ -126,6 +132,7 @@
      *     }
      *     
      *     new ServiceImpl();
+     * ```
      * ?>
      * 
      */

@@ -1,16 +1,14 @@
 <?php
-    /**
-     * Provides the definition of the PHPSession class.
-     */
-     
     namespace Spiel;
     
     /**
      * Session implementation which looks up the login of the current client in
-     * the PHP global $_SESSION variable. In order for an instance of this
-     * object to look up the current login of a client, the login system in use
-     * must have put the login into the current session using the key identified
-     * by the CURRENT_LOGIN constant of this class.
+     * the PHP global $_SESSION variable.
+     * 
+     * In order for an instance of this object to look up the current login of a
+     * client, the login system in use must have put the login into the current
+     * session using the key identified by the *CURRENT_LOGIN* constant of this
+     * class.
      */
     class PHPSession implements Session
     {

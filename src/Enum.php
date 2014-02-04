@@ -2,10 +2,11 @@
     namespace Spiel;
     
     /**
-     * A class for defining an enumeration. Since the __get() method is
-     * overridden by this class, you can access the description of a particular
-     * value using property access on an instantiated instance of this class
-     * (e.g., $enumObj->0).
+     * A class for defining an enumeration.
+     * 
+     * Since the *__get()* method is overridden by this class, you can access
+     * the description of a particular value using property access on an
+     * instantiated instance of this class (e.g., $enumObj->0).
      */
     class Enum
     {
@@ -17,11 +18,13 @@
          * descriptions of each value. For example, an enumeration of colors
          * might be defined with this associative array:
          * 
+         * ```php
          * array(0 => "Red",
          *       1 => "Green",
          *       2 => "Blue",
          *       3 => "White",
          *       4 => "Black")
+         * ```
          */
         public function __construct($items)
         {
@@ -32,6 +35,7 @@
         }
         
         /**
+         * Adds the specified value to this enumeration.
          * @param integer $value The value to be added to this enumeration.
          * @param string $description The string description to associate with
          * this value.
@@ -42,6 +46,7 @@
         }
         
         /**
+         * Returns all of the integer values of this enumeration.
          * @return array The values of this enumeration.
          */
         public function getValues()

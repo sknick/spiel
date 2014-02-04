@@ -2,16 +2,30 @@
     namespace Spiel;
     
     /**
-     * This class encapsulates a standard response to a web service defined
-     * using Spiel. To return data to the client from within a service,
-     * instantiate an instance of this class, filling in the data particular to
-     * the service as the $data parameter of the constructor, and return it from
-     * the service's implementation of the execute() method.
+     * This class encapsulates a standard response from a web service defined
+     * using Spiel.
+     * 
+     * To return data to the client from within a service, instantiate an
+     * instance of this class, filling in the data particular to the service as
+     * the *$data* parameter of the constructor, and return it from the
+     * service's implementation of the *execute()* method.
      */
     class ServiceResponse implements JSONEncodable
     {
+        /**
+         * One of the StatusCodes constants indicating the status associated
+         * with this response.
+         */
         public $status;
+        
+        /**
+         * The message to associate with this response.
+         */
         public $message;
+        
+        /**
+         * The data to associate with this response.
+         */
         public $data;
         
         /**
@@ -24,8 +38,8 @@
          * @param array|object $data The data to associate with this response.
          * If not NULL, the data must be either an object that implements
          * JSONEncodable or an array of objects that implement JSONEncodable.
-         * @throws Exception if the $data parameter is not NULL and is either an
-         * object which does not implement JSONEncodable or is an array
+         * @throws \Exception if the $data parameter is not NULL and is either
+         * an object which does not implement JSONEncodable or is an array
          * containing objects of a type which does not implement JSONEncodable.
          */
         public function __construct($status, $message, $data = NULL)

@@ -2,22 +2,24 @@
     namespace Spiel;
     
     /**
-     * This class represents a web service as can be implemented using Spiel. If
-     * the client requests the implementing web service without an "x"
+     * This class represents a web service as can be implemented using Spiel.
+     * 
+     * If the client requests the implementing web service without an "x"
      * parameter, the superclass will return helpful interface documentation to
      * the client. If the client requests the implementing web service with an
      * "x" parameter, this function will ensure that the client has specified
-     * any other required parameters as indicated by the $requiredParams
-     * argument to the constructor, and then it will call the execute() method
-     * on the subclass implementation. As a result, the actual implementation of
-     * the web service is primarily done within the implemented execute()
-     * method. The execute() method's return value is a ServiceResponse object
-     * which will be sent to the requesting client.
+     * any other required parameters as indicated by the
+     * *getRequiredParameters()* method, and then it will call the *execute()*
+     * method on the subclass implementation. As a result, the actual
+     * implementation of the web service is primarily done within the
+     * implemented *execute()* method. The *execute()* method's return value is
+     * a *ServiceResponse* object which will be sent to the requesting client.
      * 
      * Typical usage of this superclass is defining the subclass, implementing
-     * its execute() method, and then instantiating a new instance of it. For
+     * its *execute()* method, and then instantiating a new instance of it. For
      * example:
      * 
+     * ```php
      * <?php
      *     require_once("spiel.php");
      *     
@@ -41,6 +43,7 @@
      *     
      *     new ServiceImpl();
      * ?>
+     * ```
      */
     abstract class Service
     {
@@ -238,9 +241,10 @@
         
         /**
          * This method can be overridden by service implementations to specify
-         * any parameters the service requires in order to execute. By default,
-         * this method returns an empty array, meaning that there are no
-         * required parameters.
+         * any parameters the service requires in order to execute.
+         * 
+         * By default, this method returns an empty array, meaning that there
+         * are no required parameters.
          * @return array An associative array of any required request parameters
          * that must be present in order for the web service to execute. The key
          * is the request parameter name; the value is a short description of
@@ -255,9 +259,10 @@
         
         /**
          * This method can be overridden by service implementations to specify
-         * any optional parameters the service can use while executing. By
-         * default, this method returns an empty array, meaning that there are
-         * no optional parameters.
+         * any optional parameters the service can use while executing.
+         * 
+         * By default, this method returns an empty array, meaning that there
+         * are no optional parameters.
          * @return array An associative array of any optional request parameters
          * that can be present that this web service will use when it executes.
          * The key is the request parameter name; the value is a short
@@ -271,9 +276,10 @@
         
         /**
          * This method can be overridden by service implementations to specify
-         * the data returned from the web service. By default, this method
-         * returns NULL, meaning that no data is returned in the data property
-         * of the response from the web service.
+         * the data returned from the web service.
+         * 
+         * By default, this method returns NULL, meaning that no data is
+         * returned in the data property of the response from the web service.
          * @return A string or non-associative array which describes the data
          * returned in the data property of the JSON-encoded object returned
          * from this web service. If no data is provided by this web service,
@@ -298,9 +304,10 @@
         
         /**
          * This method can be overridden by service implementations to specify
-         * the type of permission required to access the web service. By
-         * default, this method returns NULL, meaning no permission is required
-         * to use the web service.
+         * the type of permission required to access the web service.
+         * 
+         * By default, this method returns NULL, meaning no permission is
+         * required to use the web service.
          * @return \Spiel\Enum An Enum object indicating the category of
          * permission required by this web service. If no permissions are
          * required to access this web service, return NULL.
@@ -312,9 +319,10 @@
         
         /**
          * This method can be overridden by service implementations to specify
-         * the permission required to access the web service. By default, this
-         * method returns NULL, meaning no permission is required to use the web
-         * service.
+         * the permission required to access the web service.
+         * 
+         * By default, this method returns NULL, meaning no permission is
+         * required to use the web service.
          * @return integer A value from the permission Enum that identifies the
          * permission required to access this web service. If no permissions are
          * required to access this web service, return NULL.
@@ -329,6 +337,7 @@
          * when the implementing web service is being invoked and all required
          * prerequisites for invocation have been met (e.g., client's user is
          * logged in, required parameters are present in the request, etc.).
+         * 
          * Note that any Exceptions thrown by this method will be caught and an
          * error response will be sent to the client. The method should return
          * a ServiceResponse object indicating the result of the service; this
@@ -344,6 +353,10 @@
          * @return \Spiel\ServiceResponse The response to return to the client.
          * If the web service does not return a standard response but instead
          * does something like start a file download, return NULL.
+         * @throws \Exception if an error occurs. Any such exception will be
+         * caught by Spiel and an error response will be sent to the client with
+         * the value returned by the exception's getMessage() method being
+         * placed into the $message property of the ServiceResponse.
          */
         abstract public function execute(ServiceUser $currentUser, $params);
         

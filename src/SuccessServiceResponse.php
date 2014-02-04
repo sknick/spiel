@@ -12,8 +12,8 @@
          * @param array|object $data The data to associate with this response.
          * If not NULL, the data must be either an object that implements
          * JSONEncodable or an array of objects that implement JSONEncodable.
-         * @throws Exception if the $data parameter is not NULL and is either an
-         * object which does not implement JSONEncodable or is an array
+         * @throws \Exception if the $data parameter is not NULL and is either
+         * an object which does not implement JSONEncodable or is an array
          * containing objects of a type which does not implement JSONEncodable.
          */
         public function __construct($data = NULL)

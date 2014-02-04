@@ -1,11 +1,11 @@
 <?php
     require_once("Enum.php");
     require_once("JSONEncodable.php");
-    require_once("ServiceStatusCodes.php");
     require_once("ServiceUser.php");
     require_once("ServiceUserManager.php");
     require_once("Session.php");
     require_once("PHPSession.php");
+    require_once("StatusCodes.php");
     require_once("ServiceResponse.php");
     require_once("SuccessServiceResponse.php");
     require_once("Service.php");

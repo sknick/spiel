@@ -7,6 +7,9 @@
      */
     abstract class ServiceUser implements JSONEncodable
     {
+        /**
+         * The username of this user.
+         */
         public $username;
         
         /**

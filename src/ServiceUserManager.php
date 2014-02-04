@@ -1,8 +1,4 @@
 <?php
-    /**
-     * Provides the definition of the ServiceUserManager interface.
-     */
-    
     namespace Spiel;
     
     /**
@@ -17,7 +13,7 @@
          * @return \Spiel\ServiceUser A ServiceUser object providing information
          * on the specified user. If the specified user is not defined, NULL
          * should be returned.
-         * @throws Exception if an error occurs.
+         * @throws \Exception if an error occurs.
          */
         public function getUser($username);
     }
