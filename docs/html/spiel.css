@@ -1,0 +1,32 @@
+body
+{
+    background-color:   #cccccc;
+    color:              #000000;
+    margin:             0;
+}
+
+div.contents
+{
+    margin-bottom:      10px;
+    padding:            12px;
+    margin-left:        auto;
+    margin-right:       auto;
+    width:              960px;
+    background-color:   #ffffff;
+    border-radius:      8px;
+}
+
+#titlearea
+{
+    background-color:   white;
+}
+
+hr.footer
+{
+    display:            none;
+}
+
+.footer
+{
+    background-color:   #aaaaaa;
+}

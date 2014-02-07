@@ -3,17 +3,15 @@
     
     /**
      * This class encapsulates a standard response from a web service defined
-     * using Spiel.
-     * 
-     * To return data to the client from within a service, instantiate an
-     * instance of this class, filling in the data particular to the service as
-     * the *$data* parameter of the constructor, and return it from the
-     * service's implementation of the *execute()* method.
+     * using Spiel. To return data to the client from within a service,
+     * instantiate an instance of this class, filling in the data particular to
+     * the service as the `$data` parameter of the constructor, and return it
+     * from the service's implementation of the `execute()` method.
      */
     class ServiceResponse implements JSONEncodable
     {
         /**
-         * One of the StatusCodes constants indicating the status associated
+         * One of the `StatusCodes` constants indicating the status associated
          * with this response.
          */
         public $status;
@@ -30,17 +28,20 @@
         
         /**
          * Constructor.
-         * @param integer $status One of the StatusCodes constants indicating
+         * @param integer $status One of the `StatusCodes` constants indicating
          * the status associated with this response. Additional integer values
          * can be specified that are application-specific; such values must
-         * start at 100 (see the StatusCodes enumeration for more information).
+         * start at 100 (see the `StatusCodes` enumeration for more
+         * information).
          * @param string $message The message to associate with this response.
          * @param array|object $data The data to associate with this response.
-         * If not NULL, the data must be either an object that implements
-         * JSONEncodable or an array of objects that implement JSONEncodable.
-         * @throws \Exception if the $data parameter is not NULL and is either
-         * an object which does not implement JSONEncodable or is an array
-         * containing objects of a type which does not implement JSONEncodable.
+         * If not `NULL`, the data must be either an object that implements
+         * `JSONEncodable` or an array of objects that implement
+         * `JSONEncodable`.
+         * @throws \Exception if the `$data` parameter is not `NULL` and is
+         * either an object which does not implement `JSONEncodable` or is an
+         * array containing objects of a type which does not implement
+         * `JSONEncodable`.
          */
         public function __construct($status, $message, $data = NULL)
         {

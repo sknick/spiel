@@ -2,7 +2,7 @@
     namespace Spiel;
     
     /**
-     * Defines the standard status values that can go into the *status* member
+     * Defines the standard status values that can go into the `status` member
      * of a response returned to the client from a Spiel web service. Additional
      * application-specific status codes can be defined, but 0 - 99 are
      * reserved, so such status codes must start at 100.

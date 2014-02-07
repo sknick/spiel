@@ -25,8 +25,8 @@
          * Must be implemented to determine whether or not the user has the
          * specified permission.
          * @param integer $permission The permission for which to be checked.
-         * @return boolean TRUE if the user has the specified permission; FALSE
-         * if not.
+         * @return boolean `TRUE` if the user has the specified permission;
+         * `FALSE` if not.
          */
         abstract public function hasPermission($permission);
     }
