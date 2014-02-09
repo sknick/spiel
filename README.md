@@ -10,18 +10,18 @@ production environments for a few years now.
 Spiel requires PHP 5.3 or higher and has been tested in an Apache 2 / PHP
 environment.
 
-API documentation is available in the docs/html folder (open index.htm). In
+API documentation is available in the `docs/html` folder (open `index.htm`). In
 addition, there are some examples of using the framework in the examples folder:
 
-- HelloWorld: Very simple example implementing the ubiquitous "Hello World"
+- **HelloWorld**: Very simple example implementing the ubiquitous "Hello World"
   functionality.
-- EmployeeManager: More full-fledged example of implementing web services using
-  the framework. The web services provide an interface for managing employee
-  information stored in an in-memory database on the server. While the web
-  services shown are insufficient to completely provide an interface to managing
-  employee information (for example, the complete set of "CRUD" functions are
-  not available), they are sufficient for illustrating most of the features of
-  the Spiel framework.
+- **EmployeeManager**: More full-fledged example of implementing web services
+  using the framework. The web services provide an interface for managing
+  employee information stored in an in-memory database on the server. While the
+  web services shown are insufficient to completely provide an interface to
+  managing employee information (for example, the complete set of "CRUD"
+  functions are not available), they are sufficient for illustrating most of the
+  features of the Spiel framework.
 
 To see the examples in action, put a folder called `lib` somewhere in your PHP
 include path; this folder should contain the contents of the `src` directory of
