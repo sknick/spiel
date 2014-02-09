@@ -7,6 +7,8 @@ requesting clients. The current version supports returning JSON-encoded objects.
 A precursor to this framework has proven itself to be very useful in various
 production environments for a few years now.
 
+![Example](/example.png "Example of web service documentation returned by Spiel")
+
 Spiel requires PHP 5.3 or higher and has been tested in an Apache 2 / PHP
 environment.
 
