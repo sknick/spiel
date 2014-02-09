@@ -5,7 +5,7 @@
      * at the bottom.
      */
     
-    require_once("spiel.php");
+    require_once("lib/spiel.php");
     
     /**
      * Our \Spiel\Session implementation. You often can just let Spiel use the
