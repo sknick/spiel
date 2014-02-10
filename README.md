@@ -105,3 +105,13 @@ With the above in place, I can now access the examples using URLs of
 Spiel uses the MIT License, so you're free to incorporate this software into
 whatever you want pretty much without restriction--commercial software, personal
 projects, you name it. Attribution is always appreciated but isn't required.
+
+###Acknowledgments###
+I must acknowledge my blatant pillaging of the Echo 3 framework's API
+documentation style as the source of Spiel's own documentation style. Echo 3 is
+a stellar framework for creating Rich Internet Applications, and I've used its
+JavaScript API extensively on professional projects to produce first-rate web
+applications with relative ease (and yes, those same web applications used Spiel
+or its precursor to implement their web services).
+
+Check out [Echo 3](http://echo.nextapp.com/)! It's well worth a look.
