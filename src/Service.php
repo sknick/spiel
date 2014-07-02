@@ -620,6 +620,35 @@ The response from using this web service is a JSON-encoded object that has the f
                 
                 $properties = $class->getProperties();
                 
+                // Because the above method returns properties so that parent
+                // class properties are displayed *after* subclass properties,
+                // let's straighten that out before going on so the
+                // documentation doesn't have the same jarring order
+                $propertyArrays = array();
+                
+                $previousClassName = NULL;
+                foreach ($properties as $property)
+                {
+                    if ($property->class !== $previousClassName)
+                    {
+                        array_push($propertyArrays, array($property));
+                        
+                        $previousClassName = $property->class;
+                    }
+                    else
+                    {
+                        array_push($propertyArrays[count($propertyArrays) - 1], $property);
+                    }
+                }
+                
+                $propertyArrays = array_reverse($propertyArrays);
+                
+                $properties = array();
+                foreach ($propertyArrays as $propertyArray)
+                {
+                    $properties = array_merge($properties, $propertyArray);
+                }
+                
                 $objectProperties = array();
                 $enumProperties = array();
                 
