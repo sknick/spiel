@@ -35,13 +35,11 @@
          * information).
          * @param string $message The message to associate with this response.
          * @param array|object $data The data to associate with this response.
-         * If not `NULL`, the data must be either an object that implements
-         * `JSONEncodable` or an array of objects that implement
-         * `JSONEncodable`.
-         * @throws \Exception if the `$data` parameter is not `NULL` and is
-         * either an object which does not implement `JSONEncodable` or is an
-         * array containing objects of a type which does not implement
-         * `JSONEncodable`.
+         * If not `NULL`, the data must be a scalar value, an object that
+         * implements `JSONEncodable`, an array of scalar values, or an array of
+         * objects that implement `JSONEncodable`.
+         * @throws \Exception if the `$data` parameter does not conform to one
+         * of the types mentioned in the `$data` parameter documentation.
          */
         public function __construct($status, $message, $data = NULL)
         {
