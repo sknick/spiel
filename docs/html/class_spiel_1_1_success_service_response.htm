@@ -112,13 +112,13 @@ Additional Inherited Members</h2></td></tr>
 <p>Constructor. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramtype">array&#160;|&#160;object</td><td class="paramname">$data</td><td>The data to associate with this response. If not <code>NULL</code>, the data must be either an object that implements <code><a class="el" href="interface_spiel_1_1_j_s_o_n_encodable.htm">JSONEncodable</a></code> or an array of objects that implement <code><a class="el" href="interface_spiel_1_1_j_s_o_n_encodable.htm">JSONEncodable</a></code>. </td></tr>
+    <tr><td class="paramtype">array&#160;|&#160;object</td><td class="paramname">$data</td><td>The data to associate with this response. If not <code>NULL</code>, the data must be a scalar value, an object that implements <code><a class="el" href="interface_spiel_1_1_j_s_o_n_encodable.htm">JSONEncodable</a></code>, an array of scalar values, or an array of objects that implement <code><a class="el" href="interface_spiel_1_1_j_s_o_n_encodable.htm">JSONEncodable</a></code>. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">\Exception</td><td>if the <code>$data</code> parameter is not <code>NULL</code> and is either an object which does not implement <code><a class="el" href="interface_spiel_1_1_j_s_o_n_encodable.htm">JSONEncodable</a></code> or is an array containing objects of a type which does not implement <code><a class="el" href="interface_spiel_1_1_j_s_o_n_encodable.htm">JSONEncodable</a></code>. </td></tr>
+    <tr><td class="paramname">\Exception</td><td>if the <code>$data</code> parameter does not conform to one of the types mentioned in the <code>$data</code> parameter documentation. </td></tr>
   </table>
   </dd>
 </dl>
@@ -134,7 +134,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><b>Spiel</b></li><li class="navelem"><a class="el" href="class_spiel_1_1_success_service_response.htm">SuccessServiceResponse</a></li>
-    <li class="footer">Generated on Fri Feb 7 2014 06:37:31 for Spiel by
+    <li class="footer">Generated on Wed Jul 2 2014 14:14:00 for Spiel by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>
