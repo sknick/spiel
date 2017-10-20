@@ -1,4 +1,4 @@
-#Spiel#
+# Spiel
 
 Spiel is a small object-oriented PHP framework for creating RPC-like web
 services that can provide interface documentation "on the fly" to requesting
@@ -6,7 +6,7 @@ clients. The current version supports returning JSON-encoded objects. A
 precursor to this framework has proven itself to be very useful in various
 production environments for a few years now.
 
-###Rationale###
+### Rationale
 So you've written some PHP web services that your client-side code can call
 using an Ajax approach or what-have-you. Your web services work well and are
 relatively robust even if they're not "Big Web Services" or implement the
@@ -52,11 +52,11 @@ data is sent. This JSON structure has the following format:
 }
 ```
 
-###Requirements###
+### Requirements
 Spiel requires PHP 5.3 or higher and has been tested in an Apache 2 / PHP
 environment.
 
-###Documentation###
+### Documentation
 API documentation is available in the `docs/html` folder (open `index.htm`). In
 addition, there are some examples of using the framework in the examples folder:
 
@@ -101,12 +101,12 @@ I created the following symbolic links in that directory:
 With the above in place, I can now access the examples using URLs of
 `http://127.0.0.1/EmployeeManager` and `http://127.0.0.1/HelloWorld`.
 
-###License###
+### License
 Spiel uses the MIT License, so you're free to incorporate this software into
 whatever you want pretty much without restriction--commercial software, personal
 projects, you name it. Attribution is always appreciated but isn't required.
 
-###Acknowledgments###
+### Acknowledgments
 I must acknowledge my blatant pillaging of the Echo 3 framework's API
 documentation style as the source of Spiel's own documentation style. Echo 3 is
 a stellar framework for creating Rich Internet Applications, and I've used its
